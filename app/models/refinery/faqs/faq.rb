@@ -3,7 +3,7 @@ module Refinery
     class Faq < Refinery::Core::BaseModel
       self.table_name = 'refinery_faqs'
 
-      attr_accessible :question, :answer, :position
+      attr_accessible :question, :answer, :is_class, :position
 
       acts_as_indexed :fields => [:question, :answer]
 
