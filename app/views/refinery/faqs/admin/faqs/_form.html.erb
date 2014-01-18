@@ -14,7 +14,7 @@
     <%= f.text_field :question, :class => 'larger widest' -%>
   </div>
 
-  <div class='field'>
+  <div class='field' id='answer'>
     <%= render '/refinery/admin/wysiwyg',
                 :f => f,
                 :fields => [:answer],
@@ -32,8 +32,8 @@
     $(document).ready(function(){
       page_options.init(false, '', '');
 
-      $("#is_class").click(function(){
-        if ($(this).is(':checked')) {
+      function check_class(){
+        if ($("#is_class").is(':checked')) {
           $("#answer").hide();
           $("#class_label").show();
           $("#question_label").hide();
@@ -42,10 +42,11 @@
           $("#class_label").hide();
           $("#question_label").show();
         }
-      });
+      }
 
-      $("#class_label").hide();
-      $("#question_label").show();      
+      $("#is_class").click(check_class);
+      check_class();
+
     });
   </script>
 <% end -%>
