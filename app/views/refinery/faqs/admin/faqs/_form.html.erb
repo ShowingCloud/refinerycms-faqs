@@ -4,27 +4,22 @@
               :include_object_name => true %>
 
   <div class='field'>
-    <%= f.label :is_class -%>
-    <%= f.check_box :is_class -%>
+    <%= f.check_box :is_class, :id => 'is_class' -%>
+    <%= f.label :is_class, :class => 'stripped' -%>
   </div>
 
   <div class='field'>
-    <% if is_class? %>
-      <%= f.label :question -%>
-    <% else %>
-      <%= f.label :class -%>
-    <% end %>
+    <%= f.label :question, :id => 'question_label' -%>
+    <%= f.label :class, :id => 'class_label' -%>
     <%= f.text_field :question, :class => 'larger widest' -%>
   </div>
 
-  <% if is_class? %>
-    <div class='field'>
-      <%= render '/refinery/admin/wysiwyg',
-                  :f => f,
-                  :fields => [:answer],
-                  :object => "faqs/faq" -%>
-    </div>
-  <% end %>
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:answer],
+                :object => "faqs/faq" -%>
+  </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
@@ -36,6 +31,21 @@
   <script>
     $(document).ready(function(){
       page_options.init(false, '', '');
+
+      $("#is_class").click(function(){
+        if ($(this).is(':checked')) {
+          $("#answer").hide();
+          $("#class_label").show();
+          $("#question_label").hide();
+        } else {
+          $("#answer").show();
+          $("#class_label").hide();
+          $("#question_label").show();
+        }
+      });
+
+      $("#class_label").hide();
+      $("#question_label").show();      
     });
   </script>
 <% end -%>
