@@ -1,0 +1,32 @@
+zh-CN:
+  refinery:
+    plugins:
+      faqs:
+        title: 常见问答
+    faqs:
+      admin:
+        faqs:
+          actions:
+            create_new: 新建问答及分类
+            reorder: 重新排列顺序
+            reorder_done: 重新排列顺序结束
+          records:
+            title: 常见问答
+            sorry_no_results: 对不起！没有找到结果。
+            no_items_yet: 还没有常见问答。点击"新建问答及分类"来添加您的第一个问答或分类。
+          faq:
+            view_live_html: 在线查看这个问答<br/><em>（在新建窗口中）</em>
+            edit: 编辑这个问答
+            delete: 永远删除这个问答
+            class: 分类
+            faq: 问答
+      faqs:
+        show:
+          other: 其它问答
+  activerecord:
+    attributes:
+      'refinery/faqs/faq':
+        question: 问题
+        answer: 回答
+        is_class: 这是一个分类
+        class: 分类
