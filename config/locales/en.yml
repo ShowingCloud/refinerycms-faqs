@@ -7,17 +7,19 @@ en:
       admin:
         faqs:
           actions:
-            create_new: Add New Faq
-            reorder: Reorder Faqs
-            reorder_done: Done Reordering Faqs
+            create_new: Add New Faq or Classification
+            reorder: Reorder Faqs and Classifications
+            reorder_done: Done Reordering Faqs and Classifications
           records:
             title: Faqs
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Faqs yet. Click "Add New Faq" to add your first faq.
+            no_items_yet: There are no Faqs yet. Click "Add New Faq or Classification" to add your first faq or classification.
           faq:
             view_live_html: View this faq live <br/><em>(opens in a new window)</em>
-            edit: Edit this faq
-            delete: Remove this faq forever
+            edit: Edit this faq / classification
+            delete: Remove this faq / classification forever
+            class: Classification
+            faq: Frequently asked questions
       faqs:
         show:
           other: Other Faqs
@@ -26,3 +28,5 @@ en:
       'refinery/faqs/faq':
         question: Question
         answer: Answer
+        is_class: This is a classification
+        class: Classification
