@@ -2,6 +2,14 @@
   <span class='title'>
     <%= faq.question %>
 
+    <span class='preview'>
+      <% if faq.is_class? %>
+          <%= t('.class') %>
+      <% else %>
+          <%= t('.faq') %>
+      <% end %>
+    </span>
+
   </span>
   <span class='actions'>
     
@@ -16,12 +24,6 @@
         :title => t('.delete'),
         :confirm => t('message', :scope => 'refinery.admin.delete', :title => faq.question),
         :method => :delete %>
-
-    <% if faq.is_class? %>
-        <%= t('.class') %>
-    <% else %>
-        <%= t('.faq') %>
-    <% end %>
 
   </span>
 </li>
